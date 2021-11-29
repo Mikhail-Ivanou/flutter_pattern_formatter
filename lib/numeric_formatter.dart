@@ -49,8 +49,8 @@ class ThousandsFormatter extends NumberInputFormatter {
     // Fix the .0 or .01 or .10 and similar issues
     if (digits.contains('.')) {
       List<String> decimalPlacesValue = digits.split(".");
-      String decimalOnly = decimalPlacesValue[1];
-      double digitsOnly = double.tryParse(decimalPlacesValue[0]);
+      final decimalOnly = decimalPlacesValue[1];
+      final digitsOnly = double.tryParse(decimalPlacesValue[0]);
       String result = (formatter ?? _formatter).format(digitsOnly);
       result = result + '.' + '$decimalOnly';
       return result;
